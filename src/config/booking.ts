@@ -1,9 +1,9 @@
 /**
  * Central NightsBridge booking configuration.
  *
- * Public booking URL sourced from the existing littlefieldsuite.com site
- * (BBID 15329). Verify with the client that this remains the correct property
- * account under the Azur Dolphin Lodge brand before production launch.
+ * Azur Dolphin Lodge is a Garden Route / Klein Brak property.
+ * Do not use booking URLs from unrelated properties.
+ * Enable only when the client confirms the correct NightsBridge BBID / widget.
  */
 
 export type BookingProvider = "nightsbridge";
@@ -23,13 +23,12 @@ export type BookingConfig = {
 };
 
 /**
- * Public booking link from https://www.littlefieldsuite.com/
- * https://www.nightsbridge.co.za/bridge/book?bbid=15329
+ * PLACEHOLDER — awaiting Azur Dolphin Lodge NightsBridge details from the client.
  */
 export const bookingConfig: BookingConfig = {
   provider: "nightsbridge",
-  enabled: true,
-  bookingUrl: "https://www.nightsbridge.co.za/bridge/book?bbid=15329",
+  enabled: false,
+  bookingUrl: null,
   widgetCode: null,
   mode: "link",
 };

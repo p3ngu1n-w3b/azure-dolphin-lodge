@@ -26,7 +26,7 @@ export function ContactPage() {
       <header className="page-hero page-hero--short">
         <img
           className="page-hero__image"
-          src="/images/suite-lounge.jpg"
+          src="/images/hero-coast.jpg"
           alt=""
         />
         <div className="page-hero__veil" aria-hidden="true" />
@@ -36,8 +36,8 @@ export function ContactPage() {
             We would love to host you
           </h1>
           <p className="page-header__lead page-header__lead--on-dark">
-            Enquire about a stay, ask a question, or book online through
-            NightsBridge.
+            Azur Lodge — situated to give you the best of both worlds. Enquire
+            about a stay or book online once NightsBridge is connected.
           </p>
         </div>
       </header>
@@ -47,39 +47,54 @@ export function ContactPage() {
           <div>
             <h2 className="section__title">Enquiry</h2>
             <p className="section__lead">
-              Prefer to talk first? Reach us directly — the same warm hosts
-              guests have thanked for years on the previous Littlefield Suite
-              site.
+              Prefer to talk first? Reach out and we will help you plan dates
+              for your Garden Route stay.
             </p>
             <ul className="contact-list">
               <li>
-                <span className="contact-list__label">Email</span>
-                <a href="mailto:littlefieldsuite@gmail.com">
-                  littlefieldsuite@gmail.com
-                </a>
-              </li>
-              <li>
-                <span className="contact-list__label">Phone</span>
-                <a href="tel:+27117044978">+27 11 704 4978</a>
-              </li>
-              <li>
-                <span className="contact-list__label">Mobile</span>
+                <span className="contact-list__label">Location</span>
                 <span>
-                  <a href="tel:+27721162908">+27 72 116 2908</a>
-                  {" · "}
-                  <a href="tel:+27827802022">+27 82 780 2022</a>
+                  Klein Brak / Garden Route — centrally between George and
+                  Mossel Bay
                 </span>
               </li>
               <li>
-                <span className="contact-list__label">Location</span>
-                <span>Olivedale, Greater Johannesburg, Gauteng</span>
+                <span className="contact-list__label">Check-in</span>
+                <span>From 2:00 pm</span>
+              </li>
+              <li>
+                <span className="contact-list__label">Check-out</span>
+                <span>By 10:00 am</span>
+              </li>
+              <li>
+                <span className="contact-list__label">Email / phone</span>
+                <span>Client contact details to be supplied</span>
               </li>
             </ul>
+            <p className="section__lead contact-local-links">
+              Local guides:{" "}
+              <a
+                href="https://visitmosselbay.co.za/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Mossel Bay
+              </a>
+              {" · "}
+              <a
+                href="https://gardenwalk.co.za/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Garden Walk
+              </a>
+            </p>
           </div>
           <div className="contact-aside">
             <p>
-              Online reservations are powered by NightsBridge. Use Book Now
-              anywhere on the site, or open the booking section below.
+              Online reservations will run through NightsBridge. Until that
+              connection is confirmed for Azur Dolphin Lodge, Book Now brings
+              you here to enquire.
             </p>
             <BookNowButton variant="secondary" />
           </div>
@@ -91,9 +106,9 @@ export function ContactPage() {
           <p className="section__eyebrow">Reservations</p>
           <h2 className="section__title">Book with NightsBridge</h2>
           <p className="section__lead">
-            Select dates and guests, view live availability and pricing, and
-            complete your reservation through the official NightsBridge booking
-            engine.
+            When enabled, this section opens the official NightsBridge booking
+            interface so you can choose dates, guest numbers, and complete your
+            reservation with live availability and pricing.
           </p>
 
           {live && bookingConfig.mode === "link" && href ? (

@@ -8,7 +8,7 @@ export function Footer() {
         <div className="site-footer__brand">
           <p className="site-footer__name">Azur Dolphin Lodge</p>
           <p className="site-footer__tagline">
-            Luxury self-catering in Olivedale, Johannesburg.
+            Tranquil valley living, just minutes from the beach.
           </p>
         </div>
         <div className="site-footer__actions">
@@ -19,7 +19,8 @@ export function Footer() {
         </div>
       </div>
       <p className="site-footer__note">
-        Reservations powered by NightsBridge. Formerly Littlefield Luxury Suite.
+        Klein Brak · Garden Route · Check-in 2:00 pm · Check-out 10:00 am ·
+        Reservations via NightsBridge when connected.
       </p>
     </footer>
   );

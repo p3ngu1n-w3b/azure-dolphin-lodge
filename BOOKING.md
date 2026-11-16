@@ -1,46 +1,48 @@
 # NightsBridge Booking Integration
 
-Azur Dolphin Lodge uses **NightsBridge** as its external accommodation booking platform.
+Azur Dolphin Lodge (Klein Brak / Garden Route) uses **NightsBridge** as its external accommodation booking platform.
 
 ## Current status
 
-Booking is **enabled** using the public NightsBridge link published on the previous site ([littlefieldsuite.com](https://www.littlefieldsuite.com/)):
+Integration is **pending** confirmation of the correct property account:
 
 - `provider`: `nightsbridge`
-- `enabled`: `true`
-- `bookingUrl`: `https://www.nightsbridge.co.za/bridge/book?bbid=15329`
+- `enabled`: `false`
+- `bookingUrl`: `null`
 - `widgetCode`: `null`
 - `mode`: `link`
 
-**Verify with the client** that BBID `15329` remains the correct property account under the Azur Dolphin Lodge brand before calling this production-final.
+While disabled, **Book Now** remains visible and routes guests to Contact & Bookings (`/contact#book`) with a clear “booking coming soon” message. The site never shows fake availability or pricing.
 
-## Supported integration methods
+## Important
 
-1. **Booking link** — public engine URL (currently in use)
-2. **Booking widget / iframe** — official embed src from NightsBridge (optional later)
+Do **not** reuse booking URLs from unrelated properties. Enable booking only after the client supplies the official Azur Dolphin Lodge NightsBridge booking URL or widget code.
 
-Do not invent BBID values, API endpoints, or credentials. Do not reverse-engineer the platform. Never commit login passwords or API secrets.
+## Connecting when details arrive
 
-## Switching to embed mode later
-
-If the client supplies an official iframe/widget src:
+1. Verify the correct property / BBID with the client.
+2. Confirm **link** vs **embed** mode.
+3. Update `src/config/booking.ts`:
 
 ```ts
 export const bookingConfig: BookingConfig = {
   provider: "nightsbridge",
   enabled: true,
-  bookingUrl: "https://www.nightsbridge.co.za/bridge/book?bbid=15329",
-  widgetCode: "https://book.nightsbridge.com/15329", // only if client confirms
-  mode: "embed",
+  bookingUrl: "https://book.nightsbridge.com/YOUR_BBID", // client-supplied
+  widgetCode: null,
+  mode: "link",
 };
 ```
 
+4. Rebuild and deploy `dist/` to GoDaddy.
+5. Test dates, guests, availability, pricing, and mobile booking.
+
 ## Security
 
-- Only the public booking URL / embed src belongs in frontend config.
-- Login credentials stay offline with the client — never in this repo.
-- `.env` / `.env.*` are gitignored.
+- Never hardcode login passwords or API secrets in frontend source.
+- Never commit secrets to Git. `.env` / `.env.*` are gitignored.
+- Only the public booking URL / embed src may live in frontend config.
 
 ## Hosting
 
-Static build for **GoDaddy** (Apache). Upload `dist/` after `npm run build`. `public/.htaccess` enables SPA routing.
+Static build for **GoDaddy** (Apache). Upload `dist/` after `npm run build`.

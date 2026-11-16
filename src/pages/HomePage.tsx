@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { BookNowButton } from "../components/booking/BookNowButton";
-import { reviews } from "../data/reviews";
 
 export function HomePage() {
   return (
@@ -9,7 +8,7 @@ export function HomePage() {
         <div className="hero__media" aria-hidden="true">
           <img
             className="hero__image"
-            src="/images/suite-pool.jpg"
+            src="/images/hero-coast.jpg"
             alt=""
             fetchPriority="high"
           />
@@ -17,15 +16,17 @@ export function HomePage() {
         </div>
         <div className="hero__content">
           <p className="hero__brand">Azur Dolphin Lodge</p>
-          <h1 className="hero__headline">Luxury self-catering in Olivedale</h1>
+          <h1 className="hero__headline">
+            Tranquil valley living, just minutes from the beach
+          </h1>
           <p className="hero__support">
-            A private suite with garden, pool, and warm hospitality — minutes
-            from Fourways, Sandton, and the Gautrain.
+            A private Garden Route retreat with quiet comfort, privacy, and easy
+            access to the Klein Brak coast.
           </p>
           <div className="hero__actions">
             <BookNowButton variant="primary" />
             <Link to="/lodge" className="btn btn--ghost">
-              Explore the suite
+              Explore the lodge
             </Link>
           </div>
         </div>
@@ -34,24 +35,26 @@ export function HomePage() {
       <section className="section atmosphere">
         <div className="section__inner atmosphere__grid">
           <div className="atmosphere__copy">
-            <p className="section__eyebrow">The suite</p>
+            <p className="section__eyebrow">The lodge</p>
             <h2 className="section__title">
-              Quiet comfort in a boomed, secure neighbourhood
+              Unwind in the heart of Klein Brak
             </h2>
             <p className="section__lead">
-              Nestled in a palm garden with water features, Azur Dolphin Lodge
-              offers a modern non-smoking suite for up to four guests — separate
-              entrance, safe parking, and the ease of full self-catering with
-              Free Wi‑Fi and DSTV.
+              Azur Dolphin Lodge is a private, non-smoking self-catering retreat
+              nestled in a peaceful pocket along the Garden Route. Offering
+              partial valley views, the lodge is thoughtfully designed for
+              guests seeking quiet comfort and privacy. Wake up to birdsong and
+              green hills rather than busy beachfront crowds, while still
+              enjoying effortless access to the coast.
             </p>
             <Link to="/lodge" className="text-link atmosphere__link">
-              Discover the lodge
+              Discover the space
             </Link>
           </div>
           <figure className="atmosphere__media">
             <img
-              src="/images/suite-lounge.jpg"
-              alt="Separate kitchen and lounge with DSTV"
+              src="/images/deck-morning.jpg"
+              alt="Quiet outdoor space for relaxing with a drink"
               loading="lazy"
             />
           </figure>
@@ -60,27 +63,30 @@ export function HomePage() {
 
       <section className="section stay-promise">
         <div className="section__inner stay-promise__inner">
-          <p className="section__eyebrow">Your stay</p>
-          <h2 className="section__title">Everything you need, thoughtfully kept</h2>
+          <p className="section__eyebrow">The best of both worlds</p>
+          <h2 className="section__title">
+            Serene valley living with the coast nearby
+          </h2>
           <ul className="stay-list">
             <li>
-              <strong>Garden &amp; pool</strong>
+              <strong>Valley calm</strong>
               <span>
-                Palmed garden, swimming pool, and a separate lapa for barbecues.
+                Partial valley views, birdsong, and a sheltered setting away
+                from beachfront bustle.
               </span>
             </li>
             <li>
-              <strong>Suite for four</strong>
+              <strong>Minutes from the shore</strong>
               <span>
-                Queen bedroom plus a luxury sleeper couch — kitchen, lounge, and
-                jacuzzi bathroom.
+                1.4 km from ocean viewpoints with benches, and 3.5 km from Klein
+                Brak Blue Flag Beach.
               </span>
             </li>
             <li>
-              <strong>Well connected</strong>
+              <strong>Centrally placed</strong>
               <span>
-                Near Olivedale Clinic, Monte Casino, Fourways, Sandton, and the
-                Gautrain.
+                Between George and Mossel Bay — close to Hartenbos, shops, and
+                the airport.
               </span>
             </li>
           </ul>
@@ -91,58 +97,33 @@ export function HomePage() {
         <div className="section__inner suite-feature__grid">
           <figure className="suite-feature__media">
             <img
-              src="/images/suite-bedroom.jpg"
-              alt="Spacious bedroom with queen-sized bed"
+              src="/images/suite-light.jpg"
+              alt="Comfortable lodge bedroom with king-size bed"
               loading="lazy"
             />
           </figure>
           <div className="suite-feature__copy">
-            <p className="section__eyebrow">Inside</p>
-            <h2 className="section__title">A complete private flatlet</h2>
+            <p className="section__eyebrow">The space</p>
+            <h2 className="section__title">A full private lodge</h2>
             <p className="section__lead">
-              Marble and wooden floors, a modern bathroom with jacuzzi bath and
-              glass shower, washing machine in suite, and outdoor smoking only.
-              Hospitality that guests describe as home from home.
+              Separate entrance, king-size bedroom, expansive bathroom, modern
+              kitchen with sleeper couch, dedicated parking, and a private
+              garden with picnic seating for outdoor meals or a sundowner.
             </p>
             <BookNowButton variant="secondary" />
           </div>
         </div>
       </section>
 
-      <section className="section reviews" aria-labelledby="reviews-heading">
-        <div className="section__inner">
-          <p className="section__eyebrow">Guest words</p>
-          <h2 id="reviews-heading" className="section__title">
-            What stays feel like
-          </h2>
-          <p className="section__lead">
-            Kind words from guests who stayed with us — carried forward from
-            years of hosting as Littlefield Luxury Suite.
-          </p>
-
-          <ul className="reviews__list">
-            {reviews.map((review) => (
-              <li key={`${review.name}-${review.place}`} className="review">
-                <blockquote className="review__quote">
-                  <p>“{review.quote}”</p>
-                </blockquote>
-                <p className="review__meta">
-                  <span className="review__name">{review.name}</span>
-                  <span className="review__place">{review.place}</span>
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <section className="section booking-strip">
         <div className="section__inner booking-strip__inner">
           <div>
-            <h2 className="section__title">Begin your stay</h2>
+            <h2 className="section__title">
+              Azur Lodge — the best of both worlds
+            </h2>
             <p className="section__lead">
-              Check live availability and reserve through NightsBridge — or
-              contact us directly if you prefer to enquire first.
+              Check in from 2:00 pm · Check out by 10:00 am. Book online through
+              NightsBridge when connected, or enquire via Contact.
             </p>
           </div>
           <BookNowButton variant="primary" />

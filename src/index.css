@@ -820,6 +820,39 @@ figure {
   }
 }
 
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0 0;
+  display: grid;
+  gap: 1.1rem;
+  max-width: 46rem;
+}
+
+.detail-list li {
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(47, 143, 159, 0.45);
+}
+
+.detail-list strong {
+  color: var(--color-sea);
+  font-weight: 600;
+}
+
+.detail-list a,
+.location-links a,
+.contact-local-links a {
+  color: var(--color-sea);
+  font-weight: 600;
+}
+
+.location-links,
+.contact-local-links {
+  margin-top: 1.5rem;
+}
+
 .lodge-gallery__grid {
   display: grid;
   gap: 1.25rem;
