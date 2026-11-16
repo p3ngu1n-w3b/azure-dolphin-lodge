@@ -20,10 +20,15 @@ export function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const goToTop = () => {
+    closeMenu();
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  };
+
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <Link to="/" className="site-logo" onClick={closeMenu}>
+        <Link to="/" className="site-logo" onClick={goToTop}>
           Azur Dolphin Lodge
         </Link>
 
@@ -36,6 +41,7 @@ export function Header() {
               className={({ isActive }) =>
                 isActive ? "site-nav__link is-active" : "site-nav__link"
               }
+              onClick={goToTop}
             >
               {item.label}
             </NavLink>
@@ -73,7 +79,7 @@ export function Header() {
                 className={({ isActive }) =>
                   isActive ? "site-nav__link is-active" : "site-nav__link"
                 }
-                onClick={closeMenu}
+                onClick={goToTop}
               >
                 {item.label}
               </NavLink>
