@@ -157,6 +157,7 @@ figure {
   place-items: center;
   cursor: pointer;
   color: var(--color-sea);
+  z-index: 50;
 }
 
 .menu-toggle__bars,
@@ -168,6 +169,9 @@ figure {
   background: currentColor;
   border-radius: 999px;
   position: relative;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .menu-toggle__bars::before,
@@ -185,18 +189,31 @@ figure {
   top: 6px;
 }
 
+.menu-toggle.is-open .menu-toggle__bars {
+  background: transparent;
+}
+
+.menu-toggle.is-open .menu-toggle__bars::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-toggle.is-open .menu-toggle__bars::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 .mobile-menu {
   position: fixed;
   top: var(--header-h);
   left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
+  height: calc(100dvh - var(--header-h));
   max-width: 100%;
   overflow: hidden;
   visibility: hidden;
   pointer-events: none;
-  z-index: 30;
+  z-index: 45;
 }
 
 .mobile-menu.is-open {

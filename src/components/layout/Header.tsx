@@ -26,43 +26,46 @@ export function Header() {
   };
 
   return (
-    <header className="site-header">
-      <div className="site-header__inner">
-        <Link to="/" className="site-logo" onClick={goToTop}>
-          Azur Dolphin Lodge
-        </Link>
+    <>
+      <header className="site-header">
+        <div className="site-header__inner">
+          <Link to="/" className="site-logo" onClick={goToTop}>
+            Azur Dolphin Lodge
+          </Link>
 
-        <nav className="site-nav site-nav--desktop" aria-label="Primary">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.end}
-              className={({ isActive }) =>
-                isActive ? "site-nav__link is-active" : "site-nav__link"
-              }
-              onClick={goToTop}
-            >
-              {item.label}
-            </NavLink>
-          ))}
-          <BookNowButton variant="nav" />
-        </nav>
+          <nav className="site-nav site-nav--desktop" aria-label="Primary">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) =>
+                  isActive ? "site-nav__link is-active" : "site-nav__link"
+                }
+                onClick={goToTop}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            <BookNowButton variant="nav" />
+          </nav>
 
-        <button
-          type="button"
-          className="menu-toggle"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className="visually-hidden">
-            {menuOpen ? "Close menu" : "Open menu"}
-          </span>
-          <span className="menu-toggle__bars" aria-hidden="true" />
-        </button>
-      </div>
+          <button
+            type="button"
+            className={`menu-toggle ${menuOpen ? "is-open" : ""}`}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="visually-hidden">
+              {menuOpen ? "Close menu" : "Open menu"}
+            </span>
+            <span className="menu-toggle__bars" aria-hidden="true" />
+          </button>
+        </div>
+      </header>
 
+      {/* Outside sticky/backdrop-filter header so position:fixed uses the viewport */}
       <div
         id="mobile-menu"
         className={`mobile-menu ${menuOpen ? "is-open" : ""}`}
@@ -88,6 +91,6 @@ export function Header() {
           </nav>
         </div>
       </div>
-    </header>
+    </>
   );
 }
