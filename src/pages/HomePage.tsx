@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { BookNowButton } from "../components/booking/BookNowButton";
 import { LocationDistances } from "../components/LocationDistances";
+import { StarRating } from "../components/StarRating";
+import { reviews } from "../data/reviews";
 
 export function HomePage() {
   return (
@@ -124,6 +126,29 @@ export function HomePage() {
             </p>
             <BookNowButton variant="secondary" />
           </div>
+        </div>
+      </section>
+
+      <section className="section reviews" aria-labelledby="reviews-heading">
+        <div className="section__inner">
+          <p className="section__eyebrow">Guest words</p>
+          <h2 id="reviews-heading" className="section__title">
+            What guests say
+          </h2>
+          <ul className="reviews__list">
+            {reviews.map((review) => (
+              <li key={`${review.name}-${review.place}`} className="review">
+                <StarRating rating={review.stars} />
+                <blockquote className="review__quote">
+                  <p>“{review.quote}”</p>
+                </blockquote>
+                <p className="review__meta">
+                  <span className="review__name">{review.name}</span>
+                  <span className="review__place">{review.place}</span>
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
