@@ -1,4 +1,5 @@
 import { BookNowButton } from "../components/booking/BookNowButton";
+import { LocationDistances } from "../components/LocationDistances";
 
 export function LodgePage() {
   return (
@@ -103,55 +104,11 @@ export function LodgePage() {
         </div>
       </section>
 
-      <section className="section lodge-overview">
-        <div className="section__inner lodge-overview__inner">
-          <h2 className="section__title">Location &amp; convenience</h2>
-          <p className="section__lead section__lead--wide">
-            Centrally situated between George and Mossel Bay, Azur Dolphin Lodge
-            gives you the best of both worlds — serene valley living with
-            beaches, shops, and attractions just a short drive away.
-          </p>
-          <ul className="detail-list">
-            <li>
-              <strong>Coastal spots:</strong> 1.4 km from scenic ocean
-              viewpoints with benches, and 3.5 km from the Klein Brak Blue Flag
-              Beach, where the river meets the sea.
-            </li>
-            <li>
-              <strong>Nearby towns &amp; travel:</strong> 10 km from Hartenbos,
-              18 km from Mossel Bay, 28 km from George Airport, and 33 km from
-              George Central.
-            </li>
-            <li>
-              <strong>Everyday essentials:</strong> Just 2 km from a local Pick
-              n Pay, bottle store, and pharmacy. Checkers Sixty60 and Pick n Pay
-              asap! deliver directly to the lodge.
-            </li>
-            <li>
-              <strong>Shopping &amp; dining:</strong> Only 8 km from{" "}
-              <a
-                href="https://gardenwalk.co.za/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Garden Walk Shopping Centre
-              </a>{" "}
-              in Hartenbos — Checkers, Food Lover&apos;s Market, Agrimark,
-              Dis-Chem, Clicks, restaurants, and takeaways.
-            </li>
-          </ul>
-          <p className="section__lead section__lead--wide location-links">
-            Explore{" "}
-            <a
-              href="https://visitmosselbay.co.za/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              local tourist activities
-            </a>{" "}
-            with Visit Mossel Bay. Live music links for the Garden Route will be
-            added soon.
-          </p>
+      <section className="section location-section">
+        <div className="section__inner">
+          <p className="section__eyebrow">Location &amp; convenience</p>
+          <h2 className="section__title">How close everything is</h2>
+          <LocationDistances />
         </div>
       </section>
 

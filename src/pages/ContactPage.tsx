@@ -54,8 +54,15 @@ export function ContactPage() {
               <li>
                 <span className="contact-list__label">Location</span>
                 <span>
-                  Klein Brak / Garden Route — centrally between George and
-                  Mossel Bay
+                  Klein Brak / Garden Route — between George and Mossel Bay
+                </span>
+              </li>
+              <li>
+                <span className="contact-list__label">Key distances</span>
+                <span>
+                  George Airport 28 km · George Central 33 km · Mossel Bay
+                  central 18 km · Hartenbos 10 km · Klein Brak Blue Flag Beach
+                  3.5 km
                 </span>
               </li>
               <li>

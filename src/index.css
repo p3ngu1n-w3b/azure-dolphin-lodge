@@ -837,6 +837,77 @@ figure {
   }
 }
 
+.location-section {
+  background: rgba(11, 58, 74, 0.03);
+}
+
+.location-distances {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.location-group__title {
+  font-size: 1.45rem;
+  color: var(--color-sea);
+  margin-bottom: 1rem;
+}
+
+.location-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.15rem;
+}
+
+.location-point {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem 0 1.15rem;
+  border-top: 1px solid rgba(11, 58, 74, 0.1);
+}
+
+.location-point__distance {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-aqua);
+}
+
+.location-point__name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-sea);
+}
+
+.location-point__name a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.location-point__detail {
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  max-width: 36rem;
+}
+
+@media (min-width: 800px) {
+  .location-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 2rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .location-grid--travel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .detail-list {
   list-style: none;
   padding: 0;

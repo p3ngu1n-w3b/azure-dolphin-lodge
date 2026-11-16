@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BookNowButton } from "../components/booking/BookNowButton";
+import { LocationDistances } from "../components/LocationDistances";
 
 export function HomePage() {
   return (
@@ -85,11 +86,22 @@ export function HomePage() {
             <li>
               <strong>Centrally placed</strong>
               <span>
-                Between George and Mossel Bay — close to Hartenbos, shops, and
-                the airport.
+                18 km from Mossel Bay central · 28 km from George Airport ·
+                33 km from George Central.
               </span>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section className="section location-section">
+        <div className="section__inner">
+          <p className="section__eyebrow">Getting here</p>
+          <h2 className="section__title">Distances at a glance</h2>
+          <LocationDistances />
+          <Link to="/lodge" className="text-link atmosphere__link">
+            See the full lodge details
+          </Link>
         </div>
       </section>
 
