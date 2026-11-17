@@ -410,12 +410,27 @@ figure {
   animation: hero-ken 28s ease-in-out infinite alternate;
 }
 
-/* Full entrance graphic — show entire image, no crop/zoom */
+/*
+ * Entrance graphic hero: image and copy stack so the full collage
+ * stays readable — especially on mobile where overlays crush it.
+ */
 .hero:has(.photo-filter--exterior) {
   min-height: 0;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: auto;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #c5e6f4;
+  color: var(--color-white);
+}
+
+.hero:has(.photo-filter--exterior) .hero__media {
+  position: relative;
+  inset: auto;
   width: 100%;
-  max-height: min(90vh, 56rem);
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
   background: #c5e6f4;
 }
 
@@ -429,13 +444,68 @@ figure {
 }
 
 .hero:has(.photo-filter--exterior) .hero__veil {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    transparent 55%,
-    rgba(6, 31, 40, 0.35) 78%,
-    rgba(6, 31, 40, 0.72) 100%
-  );
+  display: none;
+}
+
+.hero:has(.photo-filter--exterior) .hero__content {
+  background:
+    linear-gradient(135deg, rgba(11, 58, 74, 0.98), rgba(6, 31, 40, 0.99));
+  padding: 1.5rem var(--space-page) 1.85rem;
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  animation: fade-up 0.7s ease both;
+}
+
+.hero:has(.photo-filter--exterior) .hero__brand {
+  font-size: clamp(1.85rem, 7vw, 2.75rem);
+  text-shadow: none;
+  margin-bottom: 0.45rem;
+}
+
+.hero:has(.photo-filter--exterior) .hero__headline {
+  max-width: 22ch;
+  font-size: clamp(1.1rem, 3.8vw, 1.45rem);
+  margin-bottom: 0.65rem;
+}
+
+.hero:has(.photo-filter--exterior) .hero__support {
+  font-size: 0.98rem;
+  margin-bottom: 1.15rem;
+  color: rgba(244, 249, 250, 0.88);
+}
+
+.hero:has(.photo-filter--exterior) .hero__actions {
+  gap: 0.7rem;
+}
+
+.hero:has(.photo-filter--exterior) .hero__actions .btn,
+.hero:has(.photo-filter--exterior) .hero__actions .book-now {
+  flex: 1 1 10rem;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .hero:has(.photo-filter--exterior) .hero__content {
+    padding: 2rem var(--space-page) 2.35rem;
+  }
+
+  .hero:has(.photo-filter--exterior) .hero__content > * {
+    max-width: var(--max);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero:has(.photo-filter--exterior) .hero__actions {
+    max-width: var(--max);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero:has(.photo-filter--exterior) .hero__actions .btn,
+  .hero:has(.photo-filter--exterior) .hero__actions .book-now {
+    flex: 0 0 auto;
+  }
 }
 
 @media (min-width: 900px) {
@@ -860,24 +930,42 @@ figure {
 
 .page-hero:has(.photo-filter--exterior) {
   min-height: 0;
-  aspect-ratio: 16 / 9;
-  max-height: min(70vh, 40rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   background: #c5e6f4;
+  max-height: none;
 }
 
-.page-hero__image.photo-filter--exterior {
+.page-hero:has(.photo-filter--exterior) .page-hero__image {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: contain;
   object-position: center center;
+  flex-shrink: 0;
 }
 
 .page-hero:has(.photo-filter--exterior) .page-hero__veil {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    transparent 50%,
-    rgba(6, 31, 40, 0.4) 78%,
-    rgba(6, 31, 40, 0.78) 100%
-  );
+  display: none;
+}
+
+.page-hero:has(.photo-filter--exterior) .page-hero__content {
+  background:
+    linear-gradient(135deg, rgba(11, 58, 74, 0.98), rgba(6, 31, 40, 0.99));
+  padding: 1.5rem var(--space-page) 1.85rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+@media (min-width: 720px) {
+  .page-hero:has(.photo-filter--exterior) .page-hero__content {
+    padding: 2rem var(--space-page) 2.5rem;
+  }
 }
 
 .page-hero__image.photo-filter--warm {
