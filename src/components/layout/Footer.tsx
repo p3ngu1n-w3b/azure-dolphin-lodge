@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { BookNowButton } from "../booking/BookNowButton";
+import { SiteLogo } from "../SiteLogo";
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
         <div className="site-footer__brand">
-          <p className="site-footer__name">Azur Dolphin Lodge</p>
+          <Link
+            to="/"
+            className="site-footer__logo"
+            aria-label="Azur Dolphin Lodge home"
+          >
+            <SiteLogo className="site-logo__image--footer" />
+          </Link>
           <p className="site-footer__tagline">
             Tranquil valley living, just minutes from the beach.
           </p>

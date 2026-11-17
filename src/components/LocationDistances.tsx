@@ -2,6 +2,7 @@ import {
   coastalLocations,
   everydayLocations,
   GARDEN_WALK_URL,
+  LIVE_MUSIC_URL,
   travelLocations,
   VISIT_MOSSEL_BAY_URL,
   type LocationPoint,
@@ -88,8 +89,11 @@ export function LocationDistances({
         >
           local tourist activities
         </a>{" "}
-        with Visit Mossel Bay. Live music links for the Garden Route will be
-        added soon.
+        with Visit Mossel Bay. Discover{" "}
+        <a href={LIVE_MUSIC_URL} target="_blank" rel="noopener noreferrer">
+          live entertainment
+        </a>{" "}
+        on the Garden Route live music videos group.
       </p>
     </div>
   );

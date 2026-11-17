@@ -25,8 +25,8 @@ export function ContactPage() {
     <div className="page">
       <header className="page-hero page-hero--short">
         <img
-          className="page-hero__image"
-          src="/images/hero-coast.jpg"
+          className="page-hero__image photo-filter--valley"
+          src="/images/valley-hero.jpg"
           alt=""
         />
         <div className="page-hero__veil" aria-hidden="true" />
@@ -74,8 +74,25 @@ export function ContactPage() {
                 <span>By 10:00 am</span>
               </li>
               <li>
-                <span className="contact-list__label">Email / phone</span>
-                <span>Client contact details to be supplied</span>
+                <span className="contact-list__label">Email</span>
+                <a href="mailto:azurdolphin@gmail.com">azurdolphin@gmail.com</a>
+              </li>
+              <li>
+                <span className="contact-list__label">WhatsApp</span>
+                <a
+                  href="https://wa.me/27827802022"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +27 82 780 2022
+                </a>
+              </li>
+              <li>
+                <span className="contact-list__label">Alternative</span>
+                <span>
+                  Petro at{" "}
+                  <a href="tel:+27712781529">+27 71 278 1529</a>
+                </span>
               </li>
             </ul>
             <p className="section__lead contact-local-links">
@@ -94,6 +111,14 @@ export function ContactPage() {
                 rel="noopener noreferrer"
               >
                 Garden Walk
+              </a>
+              {" · "}
+              <a
+                href="https://www.facebook.com/groups/livemusicvideosgardenroute"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live entertainment
               </a>
             </p>
           </div>

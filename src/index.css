@@ -3,15 +3,15 @@
   --color-ink-soft: #3a5560;
   --color-foam: #f4f9fa;
   --color-mist: #d7e8ec;
-  --color-sea: #0b3a4a;
-  --color-sea-deep: #061f28;
-  --color-aqua: #2f8f9f;
-  --color-sand: #b89563;
+  --color-sea: #0a3a5c;
+  --color-sea-deep: #06253a;
+  --color-aqua: #2f7f9f;
+  --color-sand: #c4a15a;
   --color-white: #ffffff;
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
   --space-page: clamp(1.25rem, 4vw, 3.5rem);
-  --header-h: 4.5rem;
+  --header-h: 5.25rem;
   --radius: 0.2rem;
   --max: 1120px;
   color: var(--color-ink);
@@ -57,6 +57,23 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* Subtle photo polish for lodge imagery */
+.photo-filter--valley {
+  filter: contrast(1.08) saturate(1.18) brightness(1.03);
+}
+
+.photo-filter--bright {
+  filter: brightness(0.97) contrast(1.06) saturate(1.06);
+}
+
+.photo-filter--warm {
+  filter: brightness(1.03) contrast(1.05) saturate(1.08);
+}
+
+.photo-filter--aqua {
+  filter: saturate(1.14) contrast(1.06) brightness(1.02);
 }
 
 h1,
@@ -111,7 +128,7 @@ figure {
 .site-header__inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0.9rem var(--space-page);
+  padding: 0.55rem var(--space-page);
   min-height: var(--header-h);
   display: flex;
   align-items: center;
@@ -120,12 +137,25 @@ figure {
 }
 
 .site-logo {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--color-sea);
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
   text-decoration: none;
+  line-height: 0;
+}
+
+.site-logo__image {
+  width: auto;
+  height: clamp(3.4rem, 9vw, 4.35rem);
+  object-fit: contain;
+  border-radius: 0.35rem;
+  box-shadow: 0 1px 0 rgba(11, 58, 74, 0.06);
+}
+
+.site-logo__image--footer {
+  height: 5.5rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .site-nav--desktop {
@@ -371,9 +401,20 @@ figure {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
-  transform: scale(1.04);
-  animation: hero-ken 22s ease-in-out infinite alternate;
+  object-position: center 40%;
+  transform: scale(1.02);
+  animation: hero-ken 28s ease-in-out infinite alternate;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    /* Landscape photo reads better slightly shorter than full viewport */
+    min-height: min(78vh, 44rem);
+  }
+
+  .hero__image {
+    object-position: center 35%;
+  }
 }
 
 .hero__veil {
@@ -435,10 +476,10 @@ figure {
 
 @keyframes hero-ken {
   from {
-    transform: scale(1.04) translate3d(0, 0, 0);
+    transform: scale(1.02) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.1) translate3d(-1.5%, 1%, 0);
+    transform: scale(1.06) translate3d(-0.8%, 0.6%, 0);
   }
 }
 
@@ -469,7 +510,9 @@ figure {
   .hero__content,
   .mobile-menu,
   .atmosphere__media img,
-  .suite-feature__media img {
+  .suite-feature__media img,
+  .glimpse__item img,
+  .lodge-gallery img {
     animation: none;
     transition: none;
   }
@@ -781,6 +824,15 @@ figure {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 40%;
+}
+
+.page-hero__image.photo-filter--valley {
+  object-position: center 35%;
+}
+
+.page-hero__image.photo-filter--warm {
+  object-position: center 45%;
 }
 
 .page-hero__veil {
@@ -830,6 +882,14 @@ figure {
   margin-top: 2rem;
 }
 
+.moment__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+}
+
 .moment h3 {
   font-size: 1.75rem;
   color: var(--color-sea);
@@ -846,6 +906,46 @@ figure {
   .moments {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.25rem;
+  }
+}
+
+/* Home glimpse strip */
+.home-glimpse {
+  padding-top: 0;
+}
+
+.glimpse {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.75rem 0 0;
+}
+
+.glimpse__item {
+  overflow: hidden;
+}
+
+.glimpse__item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform 0.7s ease;
+}
+
+.glimpse__item:hover img {
+  transform: scale(1.03);
+}
+
+.glimpse__item figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+}
+
+@media (min-width: 800px) {
+  .glimpse {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 }
 
@@ -956,17 +1056,18 @@ figure {
 .lodge-gallery__grid {
   display: grid;
   gap: 1.25rem;
+  margin-top: 1.75rem;
 }
 
 .lodge-gallery figure {
   overflow: hidden;
-  border-radius: var(--radius);
 }
 
 .lodge-gallery img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: var(--radius);
   transition: transform 0.7s ease;
 }
 
@@ -980,14 +1081,32 @@ figure {
   color: var(--color-ink-soft);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 700px) {
   .lodge-gallery__grid {
-    grid-template-columns: 1.4fr 1fr;
-    align-items: end;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lodge-gallery__wide {
+    grid-column: 1 / -1;
   }
 
   .lodge-gallery__wide img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 21 / 9;
+    object-position: center 55%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .lodge-gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lodge-gallery__wide {
+    grid-column: 1 / span 2;
+  }
+
+  .lodge-gallery__wide img {
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -1098,15 +1217,16 @@ figure {
   align-items: center;
 }
 
-.site-footer__name {
-  font-family: var(--font-display);
-  font-size: 1.7rem;
-  color: var(--color-white);
-  margin-bottom: 0.3rem;
+.site-footer__logo {
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  line-height: 0;
+  text-decoration: none;
 }
 
 .site-footer__tagline {
   color: rgba(244, 249, 250, 0.7);
+  max-width: 22rem;
 }
 
 .site-footer__actions {

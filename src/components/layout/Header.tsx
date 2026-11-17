@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BookNowButton } from "../booking/BookNowButton";
+import { SiteLogo } from "../SiteLogo";
 
 const navItems = [
   { to: "/", label: "Home", end: true },
@@ -29,8 +30,13 @@ export function Header() {
     <>
       <header className="site-header">
         <div className="site-header__inner">
-          <Link to="/" className="site-logo" onClick={goToTop}>
-            Azur Dolphin Lodge
+          <Link
+            to="/"
+            className="site-logo"
+            onClick={goToTop}
+            aria-label="Azur Dolphin Lodge home"
+          >
+            <SiteLogo />
           </Link>
 
           <nav className="site-nav site-nav--desktop" aria-label="Primary">

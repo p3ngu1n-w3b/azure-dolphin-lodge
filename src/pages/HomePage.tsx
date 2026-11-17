@@ -10,8 +10,8 @@ export function HomePage() {
       <section className="hero">
         <div className="hero__media" aria-hidden="true">
           <img
-            className="hero__image"
-            src="/images/hero-coast.jpg"
+            className="hero__image photo-filter--valley"
+            src="/images/valley-hero.jpg"
             alt=""
             fetchPriority="high"
           />
@@ -56,8 +56,9 @@ export function HomePage() {
           </div>
           <figure className="atmosphere__media">
             <img
-              src="/images/deck-morning.jpg"
-              alt="Quiet outdoor space for relaxing with a drink"
+              className="photo-filter--aqua"
+              src="/images/lounge-art.jpg"
+              alt="Lounge with dolphin artwork above the sleeper couch"
               loading="lazy"
             />
           </figure>
@@ -111,8 +112,9 @@ export function HomePage() {
         <div className="section__inner suite-feature__grid">
           <figure className="suite-feature__media">
             <img
-              src="/images/suite-light.jpg"
-              alt="Comfortable lodge bedroom with king-size bed"
+              className="photo-filter--warm"
+              src="/images/bedroom-queen.jpg"
+              alt="Cozy lodge bedroom with a queen size bed"
               loading="lazy"
             />
           </figure>
@@ -120,12 +122,54 @@ export function HomePage() {
             <p className="section__eyebrow">The space</p>
             <h2 className="section__title">A full private lodge</h2>
             <p className="section__lead">
-              Separate entrance, king-size bedroom, expansive bathroom, modern
-              kitchen with sleeper couch, dedicated parking, and a private
-              garden with picnic seating for outdoor meals or a sundowner.
+              Separate entrance, cozy queen bedroom, expansive bathroom, modern
+              kitchen with sleeper couch, off-road dedicated parking, and a
+              separate garden with picnic table and chairs for outdoor meals or
+              a sundowner.
             </p>
             <BookNowButton variant="secondary" />
           </div>
+        </div>
+      </section>
+
+      <section className="section home-glimpse" aria-labelledby="glimpse-heading">
+        <div className="section__inner">
+          <p className="section__eyebrow">A closer look</p>
+          <h2 id="glimpse-heading" className="section__title">
+            Inside the lodge
+          </h2>
+          <div className="glimpse">
+            <figure className="glimpse__item">
+              <img
+                className="photo-filter--bright"
+                src="/images/kitchen-dining.jpg"
+                alt="Dining table and fully equipped kitchenette"
+                loading="lazy"
+              />
+              <figcaption>Self-catering kitchen &amp; dining</figcaption>
+            </figure>
+            <figure className="glimpse__item">
+              <img
+                className="photo-filter--warm"
+                src="/images/bathroom-bath.jpg"
+                alt="Bathroom with bath, bidet and navy accents"
+                loading="lazy"
+              />
+              <figcaption>Full bathroom with bath &amp; shower</figcaption>
+            </figure>
+            <figure className="glimpse__item">
+              <img
+                className="photo-filter--valley"
+                src="/images/valley-view.jpg"
+                alt="Green hills and valley view beyond the lodge"
+                loading="lazy"
+              />
+              <figcaption>Quiet valley outlook</figcaption>
+            </figure>
+          </div>
+          <Link to="/lodge" className="text-link atmosphere__link">
+            Browse the full gallery
+          </Link>
         </div>
       </section>
 

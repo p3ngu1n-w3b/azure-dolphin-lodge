@@ -57,3 +57,5 @@ export const everydayLocations: LocationPoint[] = [
 
 export const GARDEN_WALK_URL = "https://gardenwalk.co.za/";
 export const VISIT_MOSSEL_BAY_URL = "https://visitmosselbay.co.za/";
+export const LIVE_MUSIC_URL =
+  "https://www.facebook.com/groups/livemusicvideosgardenroute";
