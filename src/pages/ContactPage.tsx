@@ -25,8 +25,8 @@ export function ContactPage() {
     <div className="page">
       <header className="page-hero page-hero--short">
         <img
-          className="page-hero__image photo-filter--valley"
-          src="/images/valley-hero.jpg"
+          className="page-hero__image photo-filter--exterior"
+          src="/images/lodge-exterior.jpg"
           alt=""
         />
         <div className="page-hero__veil" aria-hidden="true" />

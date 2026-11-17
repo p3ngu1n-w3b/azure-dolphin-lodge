@@ -2,17 +2,29 @@ export type GalleryImage = {
   src: string;
   alt: string;
   caption: string;
-  filter?: "valley" | "bright" | "warm" | "aqua";
+  filter?: "valley" | "bright" | "warm" | "aqua" | "exterior";
   wide?: boolean;
 };
 
 export const lodgeGallery: GalleryImage[] = [
   {
+    src: "/images/lodge-exterior.jpg",
+    alt: "Azur Dolphin Lodge exterior with mint green walls and balcony",
+    caption: "The lodge exterior",
+    filter: "exterior",
+    wide: true,
+  },
+  {
+    src: "/images/lodge-entrance.jpg",
+    alt: "Private entrance door with security gate",
+    caption: "Private entrance",
+    filter: "bright",
+  },
+  {
     src: "/images/bedroom-queen.jpg",
     alt: "Queen bedroom with dolphin-themed bedding",
     caption: "Cozy queen bedroom",
     filter: "warm",
-    wide: true,
   },
   {
     src: "/images/kitchen-dining.jpg",

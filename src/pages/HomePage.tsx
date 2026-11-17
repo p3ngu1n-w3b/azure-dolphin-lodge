@@ -10,8 +10,8 @@ export function HomePage() {
       <section className="hero">
         <div className="hero__media" aria-hidden="true">
           <img
-            className="hero__image photo-filter--valley"
-            src="/images/valley-hero.jpg"
+            className="hero__image photo-filter--exterior"
+            src="/images/lodge-exterior.jpg"
             alt=""
             fetchPriority="high"
           />
