@@ -29,6 +29,16 @@ export function Footer() {
         Klein Brak · Garden Route · Check-in 2:00 pm · Check-out 10:00 am ·
         Reservations via NightsBridge when connected.
       </p>
+      <p className="site-footer__credit">
+        Built by{" "}
+        <a
+          href="https://jacoroux.co.za"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          jacoroux.co.za
+        </a>
+      </p>
     </footer>
   );
 }

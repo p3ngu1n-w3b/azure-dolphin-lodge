@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BookNowButton } from "../booking/BookNowButton";
 import { SiteLogo } from "../SiteLogo";
@@ -11,24 +11,49 @@ const navItems = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const unlockScrollY = useRef<number | null>(null);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (!menuOpen) return;
+
+    const scrollY = window.scrollY;
+    const { style: body } = document.body;
+    const { style: html } = document.documentElement;
+
+    body.position = "fixed";
+    body.top = `-${scrollY}px`;
+    body.left = "0";
+    body.right = "0";
+    body.overflow = "hidden";
+    html.overflow = "hidden";
+
     return () => {
-      document.body.style.overflow = "";
+      body.position = "";
+      body.top = "";
+      body.left = "";
+      body.right = "";
+      body.overflow = "";
+      html.overflow = "";
+      const y = unlockScrollY.current ?? scrollY;
+      unlockScrollY.current = null;
+      window.scrollTo(0, y);
     };
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
 
   const goToTop = () => {
-    closeMenu();
+    if (menuOpen) {
+      unlockScrollY.current = 0;
+      closeMenu();
+      return;
+    }
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   };
 
   return (
     <>
-      <header className="site-header">
+      <header className={`site-header${menuOpen ? " is-menu-open" : ""}`}>
         <div className="site-header__inner">
           <Link
             to="/"
@@ -70,6 +95,9 @@ export function Header() {
           </button>
         </div>
       </header>
+      {menuOpen ? (
+        <div className="site-header__spacer" aria-hidden="true" />
+      ) : null}
 
       {/* Outside sticky/backdrop-filter header so position:fixed uses the viewport */}
       <div

@@ -59,3 +59,12 @@ export const GARDEN_WALK_URL = "https://gardenwalk.co.za/";
 export const VISIT_MOSSEL_BAY_URL = "https://visitmosselbay.co.za/";
 export const LIVE_MUSIC_URL =
   "https://www.facebook.com/groups/livemusicvideosgardenroute";
+
+export const LODGE_ADDRESS =
+  "25 Hildagard Ave, Klein Brak River, 6503";
+
+const LODGE_MAPS_QUERY = encodeURIComponent(LODGE_ADDRESS);
+
+export const LODGE_MAPS_EMBED_URL = `https://www.google.com/maps?q=${LODGE_MAPS_QUERY}&z=16&output=embed`;
+
+export const LODGE_MAPS_LINK_URL = `https://www.google.com/maps/search/?api=1&query=${LODGE_MAPS_QUERY}`;

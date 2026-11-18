@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BookNowButton } from "../components/booking/BookNowButton";
 import { LocationDistances } from "../components/LocationDistances";
+import { LodgeMap } from "../components/LodgeMap";
 import { StarRating } from "../components/StarRating";
 import { reviews } from "../data/reviews";
 
@@ -102,6 +103,7 @@ export function HomePage() {
           <p className="section__eyebrow">Getting here</p>
           <h2 className="section__title">Distances at a glance</h2>
           <LocationDistances />
+          <LodgeMap />
           <Link to="/lodge" className="text-link atmosphere__link">
             See the full lodge details
           </Link>
