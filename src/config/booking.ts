@@ -3,7 +3,6 @@
  *
  * Azur Dolphin Lodge is a Garden Route / Klein Brak property.
  * Do not use booking URLs from unrelated properties.
- * Enable only when the client confirms the correct NightsBridge BBID / widget.
  */
 
 export type BookingProvider = "nightsbridge";
@@ -22,13 +21,10 @@ export type BookingConfig = {
   mode: BookingMode;
 };
 
-/**
- * PLACEHOLDER — awaiting Azur Dolphin Lodge NightsBridge details from the client.
- */
 export const bookingConfig: BookingConfig = {
   provider: "nightsbridge",
-  enabled: false,
-  bookingUrl: null,
+  enabled: true,
+  bookingUrl: "https://book.nightsbridge.com/40630",
   widgetCode: null,
   mode: "link",
 };

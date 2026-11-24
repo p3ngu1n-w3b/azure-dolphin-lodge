@@ -9,14 +9,14 @@ export function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="hero__media" aria-hidden="true">
+        <div className="hero__media">
           <img
             className="hero__image photo-filter--exterior"
             src="/images/lodge-exterior.jpg"
-            alt=""
+            alt="Azur Dolphin Lodge exterior in Klein Brak River on the Garden Route"
             fetchPriority="high"
           />
-          <div className="hero__veil" />
+          <div className="hero__veil" aria-hidden="true" />
         </div>
         <div className="hero__content">
           <p className="hero__brand">Azur Dolphin Lodge</p>
@@ -206,7 +206,7 @@ export function HomePage() {
             </h2>
             <p className="section__lead">
               Check in from 2:00 pm · Check out by 10:00 am. Book online through
-              NightsBridge when connected, or enquire via Contact.
+              NightsBridge, or enquire via Contact.
             </p>
           </div>
           <BookNowButton variant="primary" />

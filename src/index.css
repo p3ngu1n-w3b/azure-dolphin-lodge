@@ -1441,6 +1441,25 @@ figure {
   max-width: 22rem;
 }
 
+.site-footer__address {
+  margin-top: 1rem;
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(244, 249, 250, 0.62);
+  max-width: 28rem;
+}
+
+.site-footer__address a {
+  color: rgba(244, 249, 250, 0.82);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.site-footer__address a:hover {
+  color: var(--color-white);
+}
+
 .site-footer__actions {
   display: flex;
   flex-wrap: wrap;

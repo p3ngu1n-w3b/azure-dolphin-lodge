@@ -9,7 +9,7 @@ export function LodgePage() {
         <img
           className="page-hero__image photo-filter--warm"
           src="/images/bedroom-queen.jpg"
-          alt=""
+          alt="Queen bedroom at Azur Dolphin Lodge in Klein Brak River"
           fetchPriority="high"
         />
         <div className="page-hero__veil" aria-hidden="true" />

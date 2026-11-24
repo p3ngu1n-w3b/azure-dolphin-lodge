@@ -22,6 +22,8 @@ export function ContactPage() {
 
   const live = isBookingLive();
   const href = getBookingHref();
+  const showNightsbridgeLink =
+    live && bookingConfig.mode === "link" && Boolean(href);
 
   return (
     <div className="page contact-page">
@@ -30,8 +32,8 @@ export function ContactPage() {
           <p className="page-header__eyebrow">Contact &amp; Bookings</p>
           <h1 className="page-header__title">Azur Dolphin Lodge</h1>
           <p className="page-header__lead">
-            Enquire about a Garden Route stay or book online once NightsBridge
-            is connected. We are happy to help you plan dates.
+            Book online through NightsBridge, or reach out by WhatsApp or email
+            if you would like help planning dates for your Garden Route stay.
           </p>
           <div className="page-intro__actions">
             <a
@@ -136,9 +138,8 @@ export function ContactPage() {
             <p className="contact-aside__eyebrow">Reservations</p>
             <h2 className="contact-aside__title">Ready to book?</h2>
             <p>
-              Online reservations will run through NightsBridge. Until that
-              connection is confirmed for Azur Dolphin Lodge, Book Now brings
-              you here to enquire.
+              Choose real dates, guest numbers, and live rates on NightsBridge
+              — the official booking engine for Azur Dolphin Lodge.
             </p>
             <BookNowButton variant="secondary" />
           </aside>
@@ -150,14 +151,14 @@ export function ContactPage() {
           <p className="section__eyebrow">Reservations</p>
           <h2 className="section__title">Book your stay</h2>
           <p className="section__lead">
-            Check availability below, or continue to NightsBridge when online
-            booking is live.
+            Continue to NightsBridge to check availability and complete your
+            reservation.
           </p>
-          {live && bookingConfig.mode === "link" && href ? (
+          {showNightsbridgeLink && href ? (
             <div className="booking-link-panel">
               <p>
-                Online booking is live. Continue to the NightsBridge booking
-                engine to select dates and complete your reservation.
+                Online booking is live. Open the NightsBridge booking engine to
+                select dates, guest numbers, and live rates for your stay.
               </p>
               <a
                 className="book-now book-now--primary"
