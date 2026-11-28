@@ -22,8 +22,8 @@ export const lodgeGallery: GalleryImage[] = [
   },
   {
     src: "/images/bedroom-queen.jpg",
-    alt: "Queen bedroom with dolphin-themed bedding",
-    caption: "Cozy queen bedroom",
+    alt: "Bedroom with a double bed and dolphin-themed bedding",
+    caption: "Cozy bedroom with a double bed",
     filter: "warm",
   },
   {

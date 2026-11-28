@@ -116,7 +116,7 @@ export function HomePage() {
             <img
               className="photo-filter--warm"
               src="/images/bedroom-queen.jpg"
-              alt="Cozy lodge bedroom with a queen size bed"
+              alt="Cozy lodge bedroom with a double bed"
               loading="lazy"
             />
           </figure>
@@ -124,7 +124,7 @@ export function HomePage() {
             <p className="section__eyebrow">The space</p>
             <h2 className="section__title">A full private lodge</h2>
             <p className="section__lead">
-              Separate entrance, cozy queen bedroom, expansive bathroom, modern
+              Separate entrance, cozy bedroom with a double bed, expansive bathroom, modern
               kitchen with sleeper couch, off-road dedicated parking, and a
               separate garden with picnic table and chairs for outdoor meals or
               a sundowner.

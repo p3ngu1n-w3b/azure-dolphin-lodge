@@ -37,7 +37,7 @@ export const pageSeo: Record<string, PageSeo> = {
     path: "/lodge",
     title: "The Lodge | Azur Dolphin Lodge Klein Brak River",
     description:
-      "Explore Azur Dolphin Lodge: private entrance, queen bedroom, full bathroom, equipped kitchen, lounge with sleeper couch, and outdoor seating in Klein Brak River on the Garden Route.",
+      "Explore Azur Dolphin Lodge: private entrance, bedroom with a double bed, full bathroom, equipped kitchen, lounge with sleeper couch, and outdoor seating in Klein Brak River on the Garden Route.",
     image: `${SITE_URL}/images/bedroom-queen.jpg`,
   },
   "/contact": {

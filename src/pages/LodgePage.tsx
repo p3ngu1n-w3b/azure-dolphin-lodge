@@ -9,7 +9,7 @@ export function LodgePage() {
         <img
           className="page-hero__image photo-filter--warm"
           src="/images/bedroom-queen.jpg"
-          alt="Queen bedroom at Azur Dolphin Lodge in Klein Brak River"
+          alt="Bedroom with a double bed at Azur Dolphin Lodge in Klein Brak River"
           fetchPriority="high"
         />
         <div className="page-hero__veil" aria-hidden="true" />
@@ -45,12 +45,12 @@ export function LodgePage() {
               <img
                 className="moment__image photo-filter--warm"
                 src="/images/bedroom-queen.jpg"
-                alt="Queen bed with dolphin bedding"
+                alt="Double bed with dolphin bedding"
                 loading="lazy"
               />
               <h3>Bedroom</h3>
               <p>
-                Cozy bedroom furnished with a comfortable queen size bed.
+                Cozy bedroom furnished with a comfortable double bed.
               </p>
             </article>
             <article className="moment">
